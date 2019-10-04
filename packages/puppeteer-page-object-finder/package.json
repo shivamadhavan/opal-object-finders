@@ -12,7 +12,9 @@
   },
   "scripts": {
     "build-min": "uglifyjs --compress --mangle -- finder.js > finder.min.js",
-    "build": "npm run build-min"
+    "build": "npm run build-min",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "opal"
@@ -33,9 +35,11 @@
     "nopt": "^4.0.1",
     "opal-puppeteer": "0.13.0-FrameFixPatch",
     "verror": "^1.10.0",
-    "ws": "^3.2.0"
+    "ws": "^3.2.0",
+    "snyk": "^1.230.5"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "snyk": true
 }
